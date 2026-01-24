@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Award, Users, Heart, Globe, CheckCircle, Target, Eye, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SidebarContactForm from "@/components/SidebarContactForm";
 import aboutTeam from "@/assets/about-team.jpg";
 
 const stats = [
@@ -86,56 +87,58 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Our Story with Sidebar Form */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-gold font-medium text-sm uppercase tracking-wider">Our Story</span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-3 mb-6">
-                Building Bridges Across Continents
-              </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  VUKA Travels was established with a simple mission: to provide UK travellers with 
-                  exceptional service and competitive prices for their journeys to East Africa, Asia, 
-                  and beyond.
-                </p>
-                <p>
-                  "VUKA" means "wake up" or "arise" in Swahili, symbolizing our commitment to helping 
-                  you rise above ordinary travel experiences and discover the extraordinary. Our roots 
-                  in East African travel give us unique insights and connections that benefit our customers.
-                </p>
-                <p>
-                  Today, we're proud to have served over 50,000 happy customers, each with their own 
-                  unique travel stories. Whether you're visiting family, exploring new cultures, or 
-                  embarking on a business trip, we're here to make your journey seamless.
-                </p>
-              </div>
-            </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-2">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <span className="text-gold font-medium text-sm uppercase tracking-wider">Our Story</span>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-3 mb-6">
+                  Building Bridges Across Continents
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
+                  <p>
+                    VUKA Travels was established with a simple mission: to provide UK travellers with 
+                    exceptional service and competitive prices for their journeys to East Africa, Asia, 
+                    and beyond.
+                  </p>
+                  <p>
+                    "VUKA" means "wake up" or "arise" in Swahili, symbolizing our commitment to helping 
+                    you rise above ordinary travel experiences and discover the extraordinary. Our roots 
+                    in East African travel give us unique insights and connections that benefit our customers.
+                  </p>
+                  <p>
+                    Today, we're proud to have served over 50,000 happy customers, each with their own 
+                    unique travel stories. Whether you're visiting family, exploring new cultures, or 
+                    embarking on a business trip, we're here to make your journey seamless.
+                  </p>
+                </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <img
-                src={aboutTeam}
-                alt="VUKA Travels Team"
-                className="rounded-xl shadow-premium-lg"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-gold rounded-lg p-6 shadow-gold hidden md:block">
-                <div className="text-3xl font-display font-bold text-navy-dark">15+</div>
-                <div className="text-navy-dark/80 text-sm font-medium">Years of Excellence</div>
-              </div>
-            </motion.div>
+                <div className="relative">
+                  <img
+                    src={aboutTeam}
+                    alt="VUKA Travels Team"
+                    className="rounded-xl shadow-premium-lg"
+                  />
+                  <div className="absolute -bottom-6 -right-6 bg-gold rounded-lg p-6 shadow-gold hidden md:block">
+                    <div className="text-3xl font-display font-bold text-navy-dark">15+</div>
+                    <div className="text-navy-dark/80 text-sm font-medium">Years of Excellence</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Sidebar Form */}
+            <div className="lg:col-span-1">
+              <SidebarContactForm />
+            </div>
           </div>
         </div>
       </section>

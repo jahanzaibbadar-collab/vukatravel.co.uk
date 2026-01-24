@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Plane, MapPin, Calendar, ArrowRight, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SidebarContactForm from "@/components/SidebarContactForm";
 import destKenya from "@/assets/dest-kenya.jpg";
 import destTanzania from "@/assets/dest-tanzania.jpg";
 import destDubai from "@/assets/dest-dubai.jpg";
 import destThailand from "@/assets/dest-thailand.jpg";
 import destUganda from "@/assets/dest-uganda.jpg";
 import destIndia from "@/assets/dest-india.jpg";
-
 const eastAfricaFlights = [
   {
     destination: "Nairobi, Kenya",
@@ -156,31 +156,41 @@ export default function FlightsPage() {
       {/* East Africa Flights */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="h-10 w-10 rounded-lg bg-gold/10 flex items-center justify-center">
-                <MapPin className="h-5 w-5 text-gold" />
-              </div>
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground">
-                East Africa Destinations
-              </h2>
-            </div>
-            <p className="text-muted-foreground max-w-2xl">
-              Connect with your roots or explore the breathtaking landscapes of East Africa. 
-              We specialize in flights to Kenya, Tanzania, Uganda, and beyond.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-3">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="mb-12"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="h-10 w-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-gold" />
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+                    East Africa Destinations
+                  </h2>
+                </div>
+                <p className="text-muted-foreground max-w-2xl">
+                  Connect with your roots or explore the breathtaking landscapes of East Africa. 
+                  We specialize in flights to Kenya, Tanzania, Uganda, and beyond.
+                </p>
+              </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {eastAfricaFlights.map((flight, index) => (
-              <FlightCard key={flight.destination} flight={flight} index={index} />
-            ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                {eastAfricaFlights.map((flight, index) => (
+                  <FlightCard key={flight.destination} flight={flight} index={index} />
+                ))}
+              </div>
+            </div>
+
+            {/* Sidebar Form */}
+            <div className="lg:col-span-1">
+              <SidebarContactForm />
+            </div>
           </div>
         </div>
       </section>

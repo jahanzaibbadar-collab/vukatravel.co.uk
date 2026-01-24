@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Plane, Globe, Headphones, Shield, Award, Users, CheckCircle, Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import HomeContactForm from "@/components/HomeContactForm";
 import heroImage from "@/assets/hero-travel.jpg";
 import destKenya from "@/assets/dest-kenya.jpg";
 import destTanzania from "@/assets/dest-tanzania.jpg";
@@ -9,7 +10,6 @@ import destDubai from "@/assets/dest-dubai.jpg";
 import destThailand from "@/assets/dest-thailand.jpg";
 import destUganda from "@/assets/dest-uganda.jpg";
 import destIndia from "@/assets/dest-india.jpg";
-
 const services = [
   {
     icon: Plane,
@@ -306,6 +306,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Contact Form Section */}
+      <HomeContactForm />
 
       {/* CTA Section */}
       <section className="py-20 bg-background">
