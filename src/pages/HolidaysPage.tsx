@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, Users, Plane, Hotel, Compass, Camera, Sun, Mountain, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SidebarContactForm from "@/components/SidebarContactForm";
 import holidaysHero from "@/assets/holidays-hero.jpg";
 
 const packageTypes = [
@@ -110,44 +111,54 @@ export default function HolidaysPage() {
       {/* Package Types */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <span className="text-gold font-medium text-sm uppercase tracking-wider">Types of Packages</span>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-3 mb-4">
-              Holidays for Every Traveller
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Whether you're seeking romance, adventure, relaxation, or family fun, we craft 
-              perfect holiday experiences to match your style.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packageTypes.map((pkg, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-3">
               <motion.div
-                key={pkg.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card rounded-xl p-8 shadow-premium hover:shadow-premium-lg transition-all duration-300 group"
+                transition={{ duration: 0.6 }}
+                className="text-center mb-16"
               >
-                <div className="h-14 w-14 rounded-lg bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
-                  <pkg.icon className="h-7 w-7 text-gold" />
-                </div>
-                <h3 className="text-xl font-display font-semibold text-foreground mb-3">
-                  {pkg.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {pkg.description}
+                <span className="text-gold font-medium text-sm uppercase tracking-wider">Types of Packages</span>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-3 mb-4">
+                  Holidays for Every Traveller
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Whether you're seeking romance, adventure, relaxation, or family fun, we craft 
+                  perfect holiday experiences to match your style.
                 </p>
               </motion.div>
-            ))}
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                {packageTypes.map((pkg, index) => (
+                  <motion.div
+                    key={pkg.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-card rounded-xl p-8 shadow-premium hover:shadow-premium-lg transition-all duration-300 group"
+                  >
+                    <div className="h-14 w-14 rounded-lg bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                      <pkg.icon className="h-7 w-7 text-gold" />
+                    </div>
+                    <h3 className="text-xl font-display font-semibold text-foreground mb-3">
+                      {pkg.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {pkg.description}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Sidebar Form */}
+            <div className="lg:col-span-1">
+              <SidebarContactForm />
+            </div>
           </div>
         </div>
       </section>

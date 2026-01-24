@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Plus, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SidebarContactForm from "@/components/SidebarContactForm";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 const faqCategories = [
   {
     title: "Booking & Payments",
@@ -125,40 +125,48 @@ export default function FAQsPage() {
       {/* FAQ Categories */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {faqCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-                className="mb-12"
-              >
-                <h2 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-3">
-                  <span className="h-8 w-1 bg-gold rounded-full" />
-                  {category.title}
-                </h2>
-                <Accordion type="single" collapsible className="space-y-4">
-                  {category.faqs.map((faq, faqIndex) => (
-                    <AccordionItem
-                      key={faqIndex}
-                      value={`${category.title}-${faqIndex}`}
-                      className="bg-card rounded-xl px-6 border shadow-sm data-[state=open]:shadow-premium transition-shadow"
-                    >
-                      <AccordionTrigger className="text-left py-5 hover:no-underline">
-                        <span className="font-display font-semibold text-foreground pr-4">
-                          {faq.question}
-                        </span>
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Main Content */}
+            <div className="lg:col-span-3">
+              {faqCategories.map((category, categoryIndex) => (
+                <motion.div
+                  key={category.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                  className="mb-12"
+                >
+                  <h2 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-3">
+                    <span className="h-8 w-1 bg-gold rounded-full" />
+                    {category.title}
+                  </h2>
+                  <Accordion type="single" collapsible className="space-y-4">
+                    {category.faqs.map((faq, faqIndex) => (
+                      <AccordionItem
+                        key={faqIndex}
+                        value={`${category.title}-${faqIndex}`}
+                        className="bg-card rounded-xl px-6 border shadow-sm data-[state=open]:shadow-premium transition-shadow"
+                      >
+                        <AccordionTrigger className="text-left py-5 hover:no-underline">
+                          <span className="font-display font-semibold text-foreground pr-4">
+                            {faq.question}
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Sidebar Form */}
+            <div className="lg:col-span-1">
+              <SidebarContactForm />
+            </div>
           </div>
         </div>
       </section>
