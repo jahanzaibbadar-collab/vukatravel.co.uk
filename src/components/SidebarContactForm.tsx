@@ -101,11 +101,11 @@ export default function SidebarContactForm() {
 
       <div className="mt-6 pt-6 border-t border-border space-y-3">
         <a
-          href="tel:+442012345678"
+          href="tel:+442038768217"
           className="flex items-center gap-3 text-sm text-muted-foreground hover:text-gold transition-colors"
         >
           <Phone className="h-4 w-4 text-gold" />
-          +44 20 1234 5678
+          +44 2038768217
         </a>
         <a
           href="mailto:info@vukatravels.co.uk"
