@@ -95,13 +95,13 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                 <span className="text-gold-light/80 text-sm">
-                  124 City Road, London, EC1V 2NX, United Kingdom
+                  3rd Floor Suite 207, Regent Street, London England, W1B3HH
                 </span>
               </li>
               <li>
-                <a href="tel:+442012345678" className="flex items-center gap-3 text-gold-light/80 hover:text-gold transition-colors text-sm">
+                <a href="tel:+442038768217" className="flex items-center gap-3 text-gold-light/80 hover:text-gold transition-colors text-sm">
                   <Phone className="h-5 w-5 text-gold" />
-                  <span>+44 20 1234 5678</span>
+                  <span>+44 2038768217</span>
                 </a>
               </li>
               <li>

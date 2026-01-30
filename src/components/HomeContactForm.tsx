@@ -61,10 +61,10 @@ export default function HomeContactForm() {
                     Call Us
                   </h4>
                   <a 
-                    href="tel:+442012345678" 
+                    href="tel:+442038768217" 
                     className="text-muted-foreground hover:text-gold transition-colors"
                   >
-                    +44 20 1234 5678
+                    +44 2038768217
                   </a>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function HomeContactForm() {
                     Visit Us
                   </h4>
                   <p className="text-muted-foreground text-sm">
-                    86-90 Paul Street, London EC2A 4NE
+                    3rd Floor Suite 207, Regent Street, London England, W1B3HH
                   </p>
                 </div>
               </div>
