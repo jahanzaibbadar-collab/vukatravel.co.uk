@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+44 20 1234 5678", "+44 20 8765 4321"],
-    action: "tel:+442012345678",
+    details: ["+44 2038768217"],
+    action: "tel:+442038768217",
   },
   {
     icon: Mail,
@@ -23,8 +23,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["124 City Road", "London, EC1V 2NX", "United Kingdom"],
-    action: "https://maps.google.com/?q=124+City+Road+London+EC1V+2NX",
+    details: ["3rd Floor Suite 207", "Regent Street, London England", "W1B3HH"],
+    action: "https://maps.google.com/?q=Regent+Street+London+W1B3HH",
   },
   {
     icon: Clock,
@@ -144,7 +144,7 @@ export default function ContactPage() {
                 <div className="rounded-xl overflow-hidden shadow-premium h-[250px]">
                   <iframe
                     title="VUKA Travels Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.0841752789986!2d-0.09008708422985565!3d51.52751897963701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ca7d5a29c87%3A0x7b7e1a3b6f77e6a1!2s124%20City%20Rd%2C%20London%20EC1V%202NX%2C%20UK!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.0!2d-0.1398!3d51.5107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d3e3e3e3e3%3A0x1234567890123456!2sRegent%20Street%2C%20London%20W1B%203HH%2C%20UK!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -267,7 +267,7 @@ export default function ContactPage() {
               </p>
             </div>
             <Button variant="hero" size="xl" asChild>
-              <a href="tel:+442012345678">
+              <a href="tel:+442038768217">
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now
               </a>
