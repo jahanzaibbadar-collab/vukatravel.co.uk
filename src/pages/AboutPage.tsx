@@ -105,6 +105,10 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                   <p>
+                    VUKA Travels is the brand name of Air Saffar and Tours LTD, which is an enrolled 
+                    organisation under UK law (Company Registration No. 14794951).
+                  </p>
+                  <p>
                     VUKA Travels was established with a simple mission: to provide UK travellers with 
                     exceptional service and competitive prices for their journeys to East Africa, Asia, 
                     and beyond.
