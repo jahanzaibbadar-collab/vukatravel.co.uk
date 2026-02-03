@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, Users, Plane, Hotel, Compass, Camera, Sun, Mountain, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SidebarContactForm from "@/components/SidebarContactForm";
+import SidebarFlightForm from "@/components/SidebarFlightForm";
 import holidaysHero from "@/assets/holidays-hero.jpg";
 
 const packageTypes = [
@@ -157,7 +157,7 @@ export default function HolidaysPage() {
 
             {/* Sidebar Form */}
             <div className="lg:col-span-1">
-              <SidebarContactForm />
+              <SidebarFlightForm />
             </div>
           </div>
         </div>

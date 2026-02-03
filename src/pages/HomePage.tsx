@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Plane, Globe, Headphones, Shield, Award, Users, CheckCircle, Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import HomeContactForm from "@/components/HomeContactForm";
+import HeroFlightSearchForm from "@/components/HeroFlightSearchForm";
 import heroImage from "@/assets/hero-travel.jpg";
 import destKenya from "@/assets/dest-kenya.jpg";
 import destTanzania from "@/assets/dest-tanzania.jpg";
@@ -10,6 +11,7 @@ import destDubai from "@/assets/dest-dubai.jpg";
 import destThailand from "@/assets/dest-thailand.jpg";
 import destUganda from "@/assets/dest-uganda.jpg";
 import destIndia from "@/assets/dest-india.jpg";
+
 const services = [
   {
     icon: Plane,
@@ -73,44 +75,36 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center">
+      {/* Hero Section with Flight Search Form */}
+      <section className="relative min-h-screen flex flex-col">
         <div className="absolute inset-0 z-0">
           <img src={heroImage} alt="Travel destinations" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/90 via-navy-dark/80 to-navy-dark/95" />
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-gold/20 text-gold text-sm font-medium mb-6">
-                Your Trusted UK Travel Partner
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6 leading-tight">
-                Discover the World with{" "}
-                <span className="text-gradient-gold">VUKA Travels</span>
-              </h1>
-              <p className="text-lg md:text-xl text-gold-light/90 mb-8 leading-relaxed">
-                Experience exceptional travel services with competitive prices on flights to 
-                East Africa, Asia, and beyond. Your journey starts here.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="xl" asChild>
-                  <Link to="/flights">
-                    <Plane className="mr-2 h-5 w-5" />
-                    Book Flights
-                  </Link>
-                </Button>
-                <Button variant="heroOutline" size="xl" asChild>
-                  <Link to="/contact">Contact Us</Link>
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+        <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col justify-center py-8">
+          {/* Hero Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-gold/20 text-gold text-sm font-medium mb-4">
+              Your Trusted UK Travel Partner
+            </span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-4 leading-tight">
+              Discover the World with{" "}
+              <span className="text-gradient-gold">VUKA Travels</span>
+            </h1>
+            <p className="text-base md:text-lg text-gold-light/90 max-w-2xl mx-auto">
+              Experience exceptional travel services with competitive prices on flights to 
+              East Africa, Asia, and beyond.
+            </p>
+          </motion.div>
+
+          {/* Flight Search Form */}
+          <HeroFlightSearchForm />
         </div>
       </section>
 
