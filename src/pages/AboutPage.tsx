@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Award, Users, Heart, Globe, CheckCircle, Target, Eye, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SidebarContactForm from "@/components/SidebarContactForm";
+import SidebarFlightForm from "@/components/SidebarFlightForm";
 import aboutTeam from "@/assets/about-team.jpg";
 
 const stats = [
@@ -141,7 +141,7 @@ export default function AboutPage() {
 
             {/* Sidebar Form */}
             <div className="lg:col-span-1">
-              <SidebarContactForm />
+              <SidebarFlightForm />
             </div>
           </div>
         </div>
