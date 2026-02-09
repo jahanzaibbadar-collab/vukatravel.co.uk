@@ -16,25 +16,10 @@ import { Input } from "@/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { AirportCombobox } from "@/components/AirportCombobox";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { toast } from "sonner";
-
-const popularAirports = [
-  "London - Heathrow (LHR)",
-  "London - Gatwick (LGW)",
-  "Manchester (MAN)",
-  "Birmingham (BHX)",
-];
-
-const destinations = [
-  "Nairobi, Kenya (NBO)",
-  "Dar es Salaam (DAR)",
-  "Entebbe, Uganda (EBB)",
-  "Dubai, UAE (DXB)",
-  "Mumbai, India (BOM)",
-  "Bangkok (BKK)",
-];
 
 export default function SidebarFlightForm() {
   const [tripType, setTripType] = useState<"return" | "oneway">("return");
@@ -123,44 +108,24 @@ export default function SidebarFlightForm() {
 
       <form onSubmit={handleSubmit} className="p-4 space-y-3">
         {/* From */}
-        <div className="relative">
-          <Plane className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-primary" />
-          <Select 
-            value={formData.from} 
-            onValueChange={(value) => setFormData({ ...formData, from: value })}
-          >
-            <SelectTrigger className="pl-10 h-11 bg-background border-border text-sm">
-              <SelectValue placeholder="London - Heathro..." />
-            </SelectTrigger>
-            <SelectContent>
-              {popularAirports.map((airport) => (
-                <SelectItem key={airport} value={airport}>
-                  {airport}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+        <AirportCombobox
+          value={formData.from}
+          onValueChange={(value) => setFormData({ ...formData, from: value })}
+          placeholder="Departure Airport..."
+          icon={<Plane className="h-4 w-4 text-primary shrink-0" />}
+          triggerClassName="h-11 text-sm"
+          className="w-[280px]"
+        />
 
         {/* To */}
-        <div className="relative">
-          <PlaneLanding className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-primary" />
-          <Select 
-            value={formData.to} 
-            onValueChange={(value) => setFormData({ ...formData, to: value })}
-          >
-            <SelectTrigger className="pl-10 h-11 bg-background border-border text-sm">
-              <SelectValue placeholder="Destination..." />
-            </SelectTrigger>
-            <SelectContent>
-              {destinations.map((dest) => (
-                <SelectItem key={dest} value={dest}>
-                  {dest}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+        <AirportCombobox
+          value={formData.to}
+          onValueChange={(value) => setFormData({ ...formData, to: value })}
+          placeholder="Destination Airport..."
+          icon={<PlaneLanding className="h-4 w-4 text-primary shrink-0" />}
+          triggerClassName="h-11 text-sm"
+          className="w-[280px]"
+        />
 
         {/* Dates */}
         <div className="relative">
