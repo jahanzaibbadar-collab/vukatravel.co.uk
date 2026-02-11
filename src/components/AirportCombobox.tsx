@@ -42,13 +42,16 @@ export function AirportCombobox({
       return worldwideAirports.slice(0, 30);
     }
     const lowerSearch = search.toLowerCase();
-    return worldwideAirports.filter(
+    const results = worldwideAirports.filter(
       (airport) =>
         airport.city.toLowerCase().includes(lowerSearch) ||
         airport.airport.toLowerCase().includes(lowerSearch) ||
         airport.code.toLowerCase().includes(lowerSearch) ||
         airport.country.toLowerCase().includes(lowerSearch)
-    ).slice(0, 30);
+    );
+    // Sort metro/city codes to the top
+    results.sort((a, b) => (b.isMetro ? 1 : 0) - (a.isMetro ? 1 : 0));
+    return results.slice(0, 30);
   }, [search]);
 
   const selectedAirport = worldwideAirports.find(
@@ -108,11 +111,13 @@ export function AirportCombobox({
                       )}
                     />
                     <div className="flex flex-col">
-                      <span className="font-medium">
-                        {airport.city} ({airport.code})
+                      <span className={cn("font-medium", airport.isMetro && "text-primary")}>
+                        {airport.isMetro
+                          ? `${airport.city} – All Airports (${airport.code})`
+                          : `${airport.city} (${airport.code})`}
                       </span>
                       <span className="text-xs text-muted-foreground">
-                        {airport.airport}, {airport.country}
+                        {airport.isMetro ? `Includes all ${airport.city} airports` : `${airport.airport}, ${airport.country}`}
                       </span>
                     </div>
                   </CommandItem>

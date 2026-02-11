@@ -1,11 +1,38 @@
-// Comprehensive worldwide airport list
-export const worldwideAirports = [
+// Comprehensive worldwide airport and city code list
+export interface Airport {
+  city: string;
+  airport: string;
+  code: string;
+  country: string;
+  isMetro?: boolean;
+}
+
+export const worldwideAirports: Airport[] = [
+  // Metropolitan / City codes
+  { city: "London", airport: "All Airports", code: "LON", country: "United Kingdom", isMetro: true },
+  { city: "New York", airport: "All Airports", code: "NYC", country: "USA", isMetro: true },
+  { city: "Paris", airport: "All Airports", code: "PAR", country: "France", isMetro: true },
+  { city: "Tokyo", airport: "All Airports", code: "TYO", country: "Japan", isMetro: true },
+  { city: "Moscow", airport: "All Airports", code: "MOW", country: "Russia", isMetro: true },
+  { city: "Stockholm", airport: "All Airports", code: "STO", country: "Sweden", isMetro: true },
+  { city: "Milan", airport: "All Airports", code: "MIL", country: "Italy", isMetro: true },
+  { city: "São Paulo", airport: "All Airports", code: "SAO", country: "Brazil", isMetro: true },
+  { city: "Buenos Aires", airport: "All Airports", code: "BUE", country: "Argentina", isMetro: true },
+  { city: "Chicago", airport: "All Airports", code: "CHI", country: "USA", isMetro: true },
+  { city: "Washington", airport: "All Airports", code: "WAS", country: "USA", isMetro: true },
+  { city: "Bangkok", airport: "All Airports", code: "BKK_ALL", country: "Thailand", isMetro: true },
+  { city: "Seoul", airport: "All Airports", code: "SEL", country: "South Korea", isMetro: true },
+  { city: "Rio de Janeiro", airport: "All Airports", code: "RIO", country: "Brazil", isMetro: true },
+  { city: "Montreal", airport: "All Airports", code: "YMQ", country: "Canada", isMetro: true },
+  { city: "Toronto", airport: "All Airports", code: "YTO", country: "Canada", isMetro: true },
+
   // United Kingdom
   { city: "London", airport: "Heathrow", code: "LHR", country: "United Kingdom" },
   { city: "London", airport: "Gatwick", code: "LGW", country: "United Kingdom" },
   { city: "London", airport: "Stansted", code: "STN", country: "United Kingdom" },
   { city: "London", airport: "Luton", code: "LTN", country: "United Kingdom" },
   { city: "London", airport: "City", code: "LCY", country: "United Kingdom" },
+  { city: "London", airport: "Southend", code: "SEN", country: "United Kingdom" },
   { city: "Manchester", airport: "Manchester", code: "MAN", country: "United Kingdom" },
   { city: "Birmingham", airport: "Birmingham", code: "BHX", country: "United Kingdom" },
   { city: "Edinburgh", airport: "Edinburgh", code: "EDI", country: "United Kingdom" },
@@ -14,10 +41,19 @@ export const worldwideAirports = [
   { city: "Newcastle", airport: "Newcastle", code: "NCL", country: "United Kingdom" },
   { city: "Belfast", airport: "Belfast International", code: "BFS", country: "United Kingdom" },
   { city: "Leeds", airport: "Leeds Bradford", code: "LBA", country: "United Kingdom" },
-  
+  { city: "Liverpool", airport: "John Lennon", code: "LPL", country: "United Kingdom" },
+  { city: "Aberdeen", airport: "Aberdeen", code: "ABZ", country: "United Kingdom" },
+  { city: "Southampton", airport: "Southampton", code: "SOU", country: "United Kingdom" },
+  { city: "East Midlands", airport: "East Midlands", code: "EMA", country: "United Kingdom" },
+  { city: "Cardiff", airport: "Cardiff", code: "CWL", country: "United Kingdom" },
+  { city: "Exeter", airport: "Exeter", code: "EXT", country: "United Kingdom" },
+  { city: "Inverness", airport: "Inverness", code: "INV", country: "United Kingdom" },
+
   // Africa
   { city: "Nairobi", airport: "Jomo Kenyatta", code: "NBO", country: "Kenya" },
+  { city: "Nairobi", airport: "Wilson", code: "WIL", country: "Kenya" },
   { city: "Mombasa", airport: "Moi International", code: "MBA", country: "Kenya" },
+  { city: "Kisumu", airport: "Kisumu", code: "KIS", country: "Kenya" },
   { city: "Dar es Salaam", airport: "Julius Nyerere", code: "DAR", country: "Tanzania" },
   { city: "Zanzibar", airport: "Abeid Amani Karume", code: "ZNZ", country: "Tanzania" },
   { city: "Kilimanjaro", airport: "Kilimanjaro", code: "JRO", country: "Tanzania" },
@@ -25,131 +61,289 @@ export const worldwideAirports = [
   { city: "Addis Ababa", airport: "Bole International", code: "ADD", country: "Ethiopia" },
   { city: "Johannesburg", airport: "O.R. Tambo", code: "JNB", country: "South Africa" },
   { city: "Cape Town", airport: "Cape Town International", code: "CPT", country: "South Africa" },
+  { city: "Durban", airport: "King Shaka", code: "DUR", country: "South Africa" },
   { city: "Lagos", airport: "Murtala Muhammed", code: "LOS", country: "Nigeria" },
+  { city: "Abuja", airport: "Nnamdi Azikiwe", code: "ABV", country: "Nigeria" },
   { city: "Accra", airport: "Kotoka International", code: "ACC", country: "Ghana" },
   { city: "Cairo", airport: "Cairo International", code: "CAI", country: "Egypt" },
+  { city: "Hurghada", airport: "Hurghada", code: "HRG", country: "Egypt" },
+  { city: "Sharm el-Sheikh", airport: "Sharm el-Sheikh", code: "SSH", country: "Egypt" },
   { city: "Casablanca", airport: "Mohammed V", code: "CMN", country: "Morocco" },
+  { city: "Marrakech", airport: "Menara", code: "RAK", country: "Morocco" },
   { city: "Kigali", airport: "Kigali International", code: "KGL", country: "Rwanda" },
   { city: "Lusaka", airport: "Kenneth Kaunda", code: "LUN", country: "Zambia" },
   { city: "Harare", airport: "Robert Mugabe", code: "HRE", country: "Zimbabwe" },
-  
+  { city: "Tunis", airport: "Tunis-Carthage", code: "TUN", country: "Tunisia" },
+  { city: "Algiers", airport: "Houari Boumediene", code: "ALG", country: "Algeria" },
+  { city: "Dakar", airport: "Blaise Diagne", code: "DSS", country: "Senegal" },
+  { city: "Abidjan", airport: "Félix-Houphouët-Boigny", code: "ABJ", country: "Ivory Coast" },
+  { city: "Maputo", airport: "Maputo International", code: "MPM", country: "Mozambique" },
+  { city: "Windhoek", airport: "Hosea Kutako", code: "WDH", country: "Namibia" },
+  { city: "Mauritius", airport: "Sir Seewoosagur Ramgoolam", code: "MRU", country: "Mauritius" },
+  { city: "Antananarivo", airport: "Ivato International", code: "TNR", country: "Madagascar" },
+  { city: "Seychelles", airport: "Seychelles International", code: "SEZ", country: "Seychelles" },
+
   // Middle East
   { city: "Dubai", airport: "Dubai International", code: "DXB", country: "UAE" },
+  { city: "Dubai", airport: "Al Maktoum", code: "DWC", country: "UAE" },
   { city: "Abu Dhabi", airport: "Abu Dhabi International", code: "AUH", country: "UAE" },
+  { city: "Sharjah", airport: "Sharjah International", code: "SHJ", country: "UAE" },
   { city: "Doha", airport: "Hamad International", code: "DOH", country: "Qatar" },
   { city: "Jeddah", airport: "King Abdulaziz", code: "JED", country: "Saudi Arabia" },
   { city: "Riyadh", airport: "King Khalid", code: "RUH", country: "Saudi Arabia" },
+  { city: "Medina", airport: "Prince Mohammad", code: "MED", country: "Saudi Arabia" },
+  { city: "Dammam", airport: "King Fahd", code: "DMM", country: "Saudi Arabia" },
   { city: "Tel Aviv", airport: "Ben Gurion", code: "TLV", country: "Israel" },
   { city: "Amman", airport: "Queen Alia", code: "AMM", country: "Jordan" },
   { city: "Muscat", airport: "Muscat International", code: "MCT", country: "Oman" },
   { city: "Kuwait City", airport: "Kuwait International", code: "KWI", country: "Kuwait" },
   { city: "Bahrain", airport: "Bahrain International", code: "BAH", country: "Bahrain" },
-  
-  // Asia
+  { city: "Beirut", airport: "Rafic Hariri", code: "BEY", country: "Lebanon" },
+  { city: "Baghdad", airport: "Baghdad International", code: "BGW", country: "Iraq" },
+  { city: "Erbil", airport: "Erbil International", code: "EBL", country: "Iraq" },
+  { city: "Tehran", airport: "Imam Khomeini", code: "IKA", country: "Iran" },
+
+  // South Asia
   { city: "Mumbai", airport: "Chhatrapati Shivaji", code: "BOM", country: "India" },
   { city: "Delhi", airport: "Indira Gandhi", code: "DEL", country: "India" },
   { city: "Bangalore", airport: "Kempegowda", code: "BLR", country: "India" },
   { city: "Chennai", airport: "Chennai International", code: "MAA", country: "India" },
   { city: "Kolkata", airport: "Netaji Subhas Chandra Bose", code: "CCU", country: "India" },
   { city: "Hyderabad", airport: "Rajiv Gandhi", code: "HYD", country: "India" },
+  { city: "Ahmedabad", airport: "Sardar Vallabhbhai Patel", code: "AMD", country: "India" },
+  { city: "Kochi", airport: "Cochin International", code: "COK", country: "India" },
+  { city: "Goa", airport: "Manohar International", code: "GOX", country: "India" },
+  { city: "Pune", airport: "Pune Airport", code: "PNQ", country: "India" },
+  { city: "Jaipur", airport: "Jaipur International", code: "JAI", country: "India" },
+  { city: "Lucknow", airport: "Chaudhary Charan Singh", code: "LKO", country: "India" },
+  { city: "Amritsar", airport: "Sri Guru Ram Dass Jee", code: "ATQ", country: "India" },
   { city: "Islamabad", airport: "Islamabad International", code: "ISB", country: "Pakistan" },
   { city: "Karachi", airport: "Jinnah International", code: "KHI", country: "Pakistan" },
   { city: "Lahore", airport: "Allama Iqbal", code: "LHE", country: "Pakistan" },
+  { city: "Peshawar", airport: "Bacha Khan", code: "PEW", country: "Pakistan" },
+  { city: "Faisalabad", airport: "Faisalabad International", code: "LYP", country: "Pakistan" },
+  { city: "Multan", airport: "Multan International", code: "MUX", country: "Pakistan" },
+  { city: "Sialkot", airport: "Sialkot International", code: "SKT", country: "Pakistan" },
   { city: "Dhaka", airport: "Hazrat Shahjalal", code: "DAC", country: "Bangladesh" },
   { city: "Colombo", airport: "Bandaranaike", code: "CMB", country: "Sri Lanka" },
+  { city: "Kathmandu", airport: "Tribhuvan", code: "KTM", country: "Nepal" },
+  { city: "Male", airport: "Velana International", code: "MLE", country: "Maldives" },
+
+  // Southeast Asia
   { city: "Bangkok", airport: "Suvarnabhumi", code: "BKK", country: "Thailand" },
   { city: "Bangkok", airport: "Don Mueang", code: "DMK", country: "Thailand" },
   { city: "Phuket", airport: "Phuket International", code: "HKT", country: "Thailand" },
+  { city: "Chiang Mai", airport: "Chiang Mai", code: "CNX", country: "Thailand" },
   { city: "Singapore", airport: "Changi", code: "SIN", country: "Singapore" },
   { city: "Kuala Lumpur", airport: "Kuala Lumpur International", code: "KUL", country: "Malaysia" },
-  { city: "Hong Kong", airport: "Hong Kong International", code: "HKG", country: "Hong Kong" },
-  { city: "Beijing", airport: "Capital International", code: "PEK", country: "China" },
-  { city: "Shanghai", airport: "Pudong International", code: "PVG", country: "China" },
-  { city: "Tokyo", airport: "Narita", code: "NRT", country: "Japan" },
-  { city: "Tokyo", airport: "Haneda", code: "HND", country: "Japan" },
-  { city: "Seoul", airport: "Incheon", code: "ICN", country: "South Korea" },
+  { city: "Penang", airport: "Penang International", code: "PEN", country: "Malaysia" },
   { city: "Manila", airport: "Ninoy Aquino", code: "MNL", country: "Philippines" },
+  { city: "Cebu", airport: "Mactan-Cebu", code: "CEB", country: "Philippines" },
   { city: "Jakarta", airport: "Soekarno-Hatta", code: "CGK", country: "Indonesia" },
   { city: "Bali", airport: "Ngurah Rai", code: "DPS", country: "Indonesia" },
   { city: "Ho Chi Minh City", airport: "Tan Son Nhat", code: "SGN", country: "Vietnam" },
   { city: "Hanoi", airport: "Noi Bai", code: "HAN", country: "Vietnam" },
-  
+  { city: "Da Nang", airport: "Da Nang International", code: "DAD", country: "Vietnam" },
+  { city: "Phnom Penh", airport: "Phnom Penh International", code: "PNH", country: "Cambodia" },
+  { city: "Siem Reap", airport: "Angkor International", code: "SAI", country: "Cambodia" },
+  { city: "Yangon", airport: "Yangon International", code: "RGN", country: "Myanmar" },
+
+  // East Asia
+  { city: "Hong Kong", airport: "Hong Kong International", code: "HKG", country: "Hong Kong" },
+  { city: "Beijing", airport: "Capital International", code: "PEK", country: "China" },
+  { city: "Beijing", airport: "Daxing", code: "PKX", country: "China" },
+  { city: "Shanghai", airport: "Pudong International", code: "PVG", country: "China" },
+  { city: "Shanghai", airport: "Hongqiao", code: "SHA", country: "China" },
+  { city: "Guangzhou", airport: "Baiyun", code: "CAN", country: "China" },
+  { city: "Shenzhen", airport: "Bao'an", code: "SZX", country: "China" },
+  { city: "Chengdu", airport: "Tianfu", code: "TFU", country: "China" },
+  { city: "Tokyo", airport: "Narita", code: "NRT", country: "Japan" },
+  { city: "Tokyo", airport: "Haneda", code: "HND", country: "Japan" },
+  { city: "Osaka", airport: "Kansai", code: "KIX", country: "Japan" },
+  { city: "Seoul", airport: "Incheon", code: "ICN", country: "South Korea" },
+  { city: "Seoul", airport: "Gimpo", code: "GMP", country: "South Korea" },
+  { city: "Taipei", airport: "Taoyuan", code: "TPE", country: "Taiwan" },
+  { city: "Macau", airport: "Macau International", code: "MFM", country: "Macau" },
+
   // Europe
   { city: "Paris", airport: "Charles de Gaulle", code: "CDG", country: "France" },
   { city: "Paris", airport: "Orly", code: "ORY", country: "France" },
+  { city: "Nice", airport: "Côte d'Azur", code: "NCE", country: "France" },
+  { city: "Lyon", airport: "Saint-Exupéry", code: "LYS", country: "France" },
+  { city: "Marseille", airport: "Provence", code: "MRS", country: "France" },
   { city: "Amsterdam", airport: "Schiphol", code: "AMS", country: "Netherlands" },
   { city: "Frankfurt", airport: "Frankfurt", code: "FRA", country: "Germany" },
   { city: "Munich", airport: "Munich", code: "MUC", country: "Germany" },
   { city: "Berlin", airport: "Brandenburg", code: "BER", country: "Germany" },
+  { city: "Düsseldorf", airport: "Düsseldorf", code: "DUS", country: "Germany" },
+  { city: "Hamburg", airport: "Hamburg", code: "HAM", country: "Germany" },
+  { city: "Cologne", airport: "Cologne/Bonn", code: "CGN", country: "Germany" },
+  { city: "Stuttgart", airport: "Stuttgart", code: "STR", country: "Germany" },
   { city: "Rome", airport: "Fiumicino", code: "FCO", country: "Italy" },
+  { city: "Rome", airport: "Ciampino", code: "CIA", country: "Italy" },
   { city: "Milan", airport: "Malpensa", code: "MXP", country: "Italy" },
+  { city: "Milan", airport: "Linate", code: "LIN", country: "Italy" },
+  { city: "Venice", airport: "Marco Polo", code: "VCE", country: "Italy" },
+  { city: "Naples", airport: "Naples International", code: "NAP", country: "Italy" },
+  { city: "Bologna", airport: "Guglielmo Marconi", code: "BLQ", country: "Italy" },
   { city: "Madrid", airport: "Barajas", code: "MAD", country: "Spain" },
   { city: "Barcelona", airport: "El Prat", code: "BCN", country: "Spain" },
+  { city: "Malaga", airport: "Costa del Sol", code: "AGP", country: "Spain" },
+  { city: "Palma de Mallorca", airport: "Palma", code: "PMI", country: "Spain" },
+  { city: "Alicante", airport: "Alicante-Elche", code: "ALC", country: "Spain" },
+  { city: "Tenerife", airport: "Tenerife South", code: "TFS", country: "Spain" },
+  { city: "Ibiza", airport: "Ibiza", code: "IBZ", country: "Spain" },
   { city: "Lisbon", airport: "Humberto Delgado", code: "LIS", country: "Portugal" },
+  { city: "Porto", airport: "Francisco Sá Carneiro", code: "OPO", country: "Portugal" },
+  { city: "Faro", airport: "Faro", code: "FAO", country: "Portugal" },
   { city: "Athens", airport: "Eleftherios Venizelos", code: "ATH", country: "Greece" },
+  { city: "Thessaloniki", airport: "Makedonia", code: "SKG", country: "Greece" },
+  { city: "Heraklion", airport: "Nikos Kazantzakis", code: "HER", country: "Greece" },
+  { city: "Santorini", airport: "Santorini", code: "JTR", country: "Greece" },
   { city: "Istanbul", airport: "Istanbul Airport", code: "IST", country: "Turkey" },
+  { city: "Istanbul", airport: "Sabiha Gökçen", code: "SAW", country: "Turkey" },
+  { city: "Antalya", airport: "Antalya", code: "AYT", country: "Turkey" },
+  { city: "Ankara", airport: "Esenboğa", code: "ESB", country: "Turkey" },
+  { city: "Izmir", airport: "Adnan Menderes", code: "ADB", country: "Turkey" },
   { city: "Zurich", airport: "Zurich", code: "ZRH", country: "Switzerland" },
+  { city: "Geneva", airport: "Geneva", code: "GVA", country: "Switzerland" },
   { city: "Vienna", airport: "Vienna", code: "VIE", country: "Austria" },
   { city: "Brussels", airport: "Brussels", code: "BRU", country: "Belgium" },
   { city: "Copenhagen", airport: "Copenhagen", code: "CPH", country: "Denmark" },
   { city: "Stockholm", airport: "Arlanda", code: "ARN", country: "Sweden" },
+  { city: "Gothenburg", airport: "Landvetter", code: "GOT", country: "Sweden" },
   { city: "Oslo", airport: "Gardermoen", code: "OSL", country: "Norway" },
+  { city: "Helsinki", airport: "Helsinki-Vantaa", code: "HEL", country: "Finland" },
   { city: "Dublin", airport: "Dublin", code: "DUB", country: "Ireland" },
   { city: "Warsaw", airport: "Chopin", code: "WAW", country: "Poland" },
+  { city: "Krakow", airport: "John Paul II", code: "KRK", country: "Poland" },
   { city: "Prague", airport: "Václav Havel", code: "PRG", country: "Czech Republic" },
   { city: "Budapest", airport: "Ferenc Liszt", code: "BUD", country: "Hungary" },
+  { city: "Bucharest", airport: "Henri Coandă", code: "OTP", country: "Romania" },
   { city: "Moscow", airport: "Sheremetyevo", code: "SVO", country: "Russia" },
-  { city: "Aarhus", airport: "Aarhus", code: "AAR", country: "Denmark" },
-  
+  { city: "Moscow", airport: "Domodedovo", code: "DME", country: "Russia" },
+  { city: "St. Petersburg", airport: "Pulkovo", code: "LED", country: "Russia" },
+  { city: "Reykjavik", airport: "Keflavik", code: "KEF", country: "Iceland" },
+  { city: "Riga", airport: "Riga International", code: "RIX", country: "Latvia" },
+  { city: "Tallinn", airport: "Lennart Meri", code: "TLL", country: "Estonia" },
+  { city: "Vilnius", airport: "Vilnius", code: "VNO", country: "Lithuania" },
+  { city: "Sofia", airport: "Sofia", code: "SOF", country: "Bulgaria" },
+  { city: "Zagreb", airport: "Franjo Tuđman", code: "ZAG", country: "Croatia" },
+  { city: "Split", airport: "Split", code: "SPU", country: "Croatia" },
+  { city: "Dubrovnik", airport: "Dubrovnik", code: "DBV", country: "Croatia" },
+  { city: "Belgrade", airport: "Nikola Tesla", code: "BEG", country: "Serbia" },
+  { city: "Ljubljana", airport: "Jože Pučnik", code: "LJU", country: "Slovenia" },
+  { city: "Malta", airport: "Malta International", code: "MLA", country: "Malta" },
+  { city: "Cyprus", airport: "Larnaca", code: "LCA", country: "Cyprus" },
+  { city: "Cyprus", airport: "Paphos", code: "PFO", country: "Cyprus" },
+  { city: "Tirana", airport: "Mother Teresa", code: "TIA", country: "Albania" },
+  { city: "Luxembourg", airport: "Luxembourg", code: "LUX", country: "Luxembourg" },
+
   // North America
   { city: "New York", airport: "JFK", code: "JFK", country: "USA" },
   { city: "New York", airport: "Newark", code: "EWR", country: "USA" },
   { city: "New York", airport: "LaGuardia", code: "LGA", country: "USA" },
   { city: "Los Angeles", airport: "LAX", code: "LAX", country: "USA" },
   { city: "Chicago", airport: "O'Hare", code: "ORD", country: "USA" },
+  { city: "Chicago", airport: "Midway", code: "MDW", country: "USA" },
   { city: "Miami", airport: "Miami International", code: "MIA", country: "USA" },
   { city: "San Francisco", airport: "SFO", code: "SFO", country: "USA" },
   { city: "Washington", airport: "Dulles", code: "IAD", country: "USA" },
+  { city: "Washington", airport: "Reagan National", code: "DCA", country: "USA" },
   { city: "Atlanta", airport: "Hartsfield-Jackson", code: "ATL", country: "USA" },
   { city: "Boston", airport: "Logan", code: "BOS", country: "USA" },
   { city: "Dallas", airport: "DFW", code: "DFW", country: "USA" },
   { city: "Houston", airport: "George Bush", code: "IAH", country: "USA" },
   { city: "Seattle", airport: "Seattle-Tacoma", code: "SEA", country: "USA" },
+  { city: "Denver", airport: "Denver International", code: "DEN", country: "USA" },
+  { city: "Las Vegas", airport: "Harry Reid", code: "LAS", country: "USA" },
+  { city: "Orlando", airport: "Orlando International", code: "MCO", country: "USA" },
+  { city: "San Diego", airport: "San Diego", code: "SAN", country: "USA" },
+  { city: "Philadelphia", airport: "Philadelphia", code: "PHL", country: "USA" },
+  { city: "Minneapolis", airport: "Minneapolis-Saint Paul", code: "MSP", country: "USA" },
+  { city: "Detroit", airport: "Detroit Metro", code: "DTW", country: "USA" },
+  { city: "Honolulu", airport: "Daniel K. Inouye", code: "HNL", country: "USA" },
   { city: "Toronto", airport: "Pearson", code: "YYZ", country: "Canada" },
   { city: "Vancouver", airport: "Vancouver", code: "YVR", country: "Canada" },
   { city: "Montreal", airport: "Trudeau", code: "YUL", country: "Canada" },
+  { city: "Calgary", airport: "Calgary", code: "YYC", country: "Canada" },
+  { city: "Ottawa", airport: "Macdonald-Cartier", code: "YOW", country: "Canada" },
+  { city: "Edmonton", airport: "Edmonton", code: "YEG", country: "Canada" },
   { city: "Mexico City", airport: "Benito Juárez", code: "MEX", country: "Mexico" },
   { city: "Cancun", airport: "Cancun International", code: "CUN", country: "Mexico" },
-  
+  { city: "Guadalajara", airport: "Miguel Hidalgo", code: "GDL", country: "Mexico" },
+
+  // Caribbean
+  { city: "Kingston", airport: "Norman Manley", code: "KIN", country: "Jamaica" },
+  { city: "Montego Bay", airport: "Sangster", code: "MBJ", country: "Jamaica" },
+  { city: "Nassau", airport: "Lynden Pindling", code: "NAS", country: "Bahamas" },
+  { city: "Bridgetown", airport: "Grantley Adams", code: "BGI", country: "Barbados" },
+  { city: "Port of Spain", airport: "Piarco", code: "POS", country: "Trinidad & Tobago" },
+  { city: "Havana", airport: "José Martí", code: "HAV", country: "Cuba" },
+  { city: "Punta Cana", airport: "Punta Cana", code: "PUJ", country: "Dominican Republic" },
+  { city: "Santo Domingo", airport: "Las Américas", code: "SDQ", country: "Dominican Republic" },
+  { city: "San Juan", airport: "Luis Muñoz Marín", code: "SJU", country: "Puerto Rico" },
+  { city: "Antigua", airport: "V.C. Bird", code: "ANU", country: "Antigua & Barbuda" },
+  { city: "St. Lucia", airport: "Hewanorra", code: "UVF", country: "St. Lucia" },
+
   // South America
   { city: "São Paulo", airport: "Guarulhos", code: "GRU", country: "Brazil" },
+  { city: "São Paulo", airport: "Congonhas", code: "CGH", country: "Brazil" },
   { city: "Rio de Janeiro", airport: "Galeão", code: "GIG", country: "Brazil" },
+  { city: "Rio de Janeiro", airport: "Santos Dumont", code: "SDU", country: "Brazil" },
+  { city: "Brasília", airport: "Presidente Juscelino Kubitschek", code: "BSB", country: "Brazil" },
   { city: "Buenos Aires", airport: "Ezeiza", code: "EZE", country: "Argentina" },
+  { city: "Buenos Aires", airport: "Aeroparque", code: "AEP", country: "Argentina" },
   { city: "Lima", airport: "Jorge Chávez", code: "LIM", country: "Peru" },
   { city: "Bogotá", airport: "El Dorado", code: "BOG", country: "Colombia" },
+  { city: "Medellín", airport: "José María Córdova", code: "MDE", country: "Colombia" },
   { city: "Santiago", airport: "Arturo Merino Benítez", code: "SCL", country: "Chile" },
-  
+  { city: "Quito", airport: "Mariscal Sucre", code: "UIO", country: "Ecuador" },
+  { city: "Guayaquil", airport: "José Joaquín de Olmedo", code: "GYE", country: "Ecuador" },
+  { city: "Caracas", airport: "Simón Bolívar", code: "CCS", country: "Venezuela" },
+  { city: "Montevideo", airport: "Carrasco", code: "MVD", country: "Uruguay" },
+
   // Oceania
   { city: "Sydney", airport: "Kingsford Smith", code: "SYD", country: "Australia" },
   { city: "Melbourne", airport: "Melbourne", code: "MEL", country: "Australia" },
   { city: "Brisbane", airport: "Brisbane", code: "BNE", country: "Australia" },
   { city: "Perth", airport: "Perth", code: "PER", country: "Australia" },
+  { city: "Adelaide", airport: "Adelaide", code: "ADL", country: "Australia" },
+  { city: "Gold Coast", airport: "Gold Coast", code: "OOL", country: "Australia" },
+  { city: "Cairns", airport: "Cairns", code: "CNS", country: "Australia" },
   { city: "Auckland", airport: "Auckland", code: "AKL", country: "New Zealand" },
+  { city: "Wellington", airport: "Wellington", code: "WLG", country: "New Zealand" },
+  { city: "Christchurch", airport: "Christchurch", code: "CHC", country: "New Zealand" },
+  { city: "Queenstown", airport: "Queenstown", code: "ZQN", country: "New Zealand" },
+  { city: "Fiji", airport: "Nadi International", code: "NAN", country: "Fiji" },
+
+  // Central Asia
+  { city: "Tashkent", airport: "Islam Karimov", code: "TAS", country: "Uzbekistan" },
+  { city: "Almaty", airport: "Almaty International", code: "ALA", country: "Kazakhstan" },
+  { city: "Nur-Sultan", airport: "Nursultan Nazarbayev", code: "NQZ", country: "Kazakhstan" },
+  { city: "Baku", airport: "Heydar Aliyev", code: "GYD", country: "Azerbaijan" },
+  { city: "Tbilisi", airport: "Shota Rustaveli", code: "TBS", country: "Georgia" },
+  { city: "Yerevan", airport: "Zvartnots", code: "EVN", country: "Armenia" },
 ];
 
 // Format airport for display
-export const formatAirport = (airport: typeof worldwideAirports[0]) => 
-  `${airport.city} - ${airport.airport} (${airport.code})`;
+export const formatAirport = (airport: Airport) =>
+  airport.isMetro
+    ? `${airport.city} - All Airports (${airport.code})`
+    : `${airport.city} - ${airport.airport} (${airport.code})`;
 
-// Search airports by query (city, airport name, or code)
+// Search airports by query (city, airport name, or code) — metros first
 export const searchAirports = (query: string) => {
   if (!query || query.length < 2) return worldwideAirports.slice(0, 20);
-  
+
   const lowerQuery = query.toLowerCase();
-  return worldwideAirports.filter(airport => 
+  const results = worldwideAirports.filter(airport =>
     airport.city.toLowerCase().includes(lowerQuery) ||
     airport.airport.toLowerCase().includes(lowerQuery) ||
     airport.code.toLowerCase().includes(lowerQuery) ||
     airport.country.toLowerCase().includes(lowerQuery)
-  ).slice(0, 20);
+  );
+  // Sort metros first
+  results.sort((a, b) => (b.isMetro ? 1 : 0) - (a.isMetro ? 1 : 0));
+  return results.slice(0, 20);
 };
