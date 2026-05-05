@@ -22,6 +22,11 @@ jobs:
       - name: Check build folder
         run: ls -la dist || echo "dist folder missing"
 
+      - name: Show what is being deployed
+        run: |
+          echo "DIST CONTENT:"
+          ls -R dist
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
