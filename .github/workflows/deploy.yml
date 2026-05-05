@@ -6,17 +6,12 @@ on:
       - main
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm install
@@ -27,12 +22,12 @@ jobs:
       - name: Check build folder
         run: ls -la dist || echo "dist folder missing"
 
-      - name: Deploy to Bluehost via FTP
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: vukatravels.co.uk
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: .builds/
+          local-dir: ./dist/
           server-dir: /website_be3476d6/
           dangerous-clean-slate: true
