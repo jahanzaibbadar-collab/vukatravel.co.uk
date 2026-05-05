@@ -33,6 +33,6 @@ jobs:
           server: vukatravels.co.uk
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: build/
+          local-dir: builds/
           server-dir: /website_be3476d6/
           dangerous-clean-slate: true
