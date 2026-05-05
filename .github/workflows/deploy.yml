@@ -1,39 +1,22 @@
-name: Build and Deploy React App to Bluehost
-
+name: Deploy to Bluehost
 on:
   push:
     branches:
       - main
-
 jobs:
-  deploy:
+  web-deploy:
+    name: Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Check build folder
-        run: ls -la dist || echo "dist folder missing"
-
-      - name: Show what is being deployed
-        run: |
-          echo "DIST CONTENT:"
-          ls -R dist
-
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /home4/cartmaxp/public_html/website_be3476d6/
-          dangerous-clean-slate: true
+    - name: Get latest code
+      uses: actions/checkout@v3
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist/
+        server-dir: /home4/cartmaxp/public_html/website_be3476d6/
+        dangerous-clean-slate: true
         
