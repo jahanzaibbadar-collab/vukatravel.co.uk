@@ -1,4 +1,4 @@
-name: Deploy to Bluehost
+name: Build and Deploy React App to Bluehost
 
 on:
   push:
@@ -6,17 +6,29 @@ on:
       - main
 
 jobs:
-  ftp-deploy:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy files via FTP
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Bluehost via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.vukatravels.co.uk
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build/
           server-dir: /public_html/
