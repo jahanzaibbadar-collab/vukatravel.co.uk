@@ -95,7 +95,7 @@ export default function HomeContactForm() {
                     Visit Us
                   </h4>
                   <p className="text-muted-foreground text-sm">
-                    3rd Floor Suite 207, Regent Street, London England, W1B3HH
+                    K T Summit House, 100 Hanger Lane, London, England, W5 1EZ
                   </p>
                 </div>
               </div>

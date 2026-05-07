@@ -95,7 +95,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                 <span className="text-gold-light/80 text-sm">
-                  3rd Floor Suite 207, Regent Street, London England, W1B3HH
+                  K T Summit House, 100 Hanger Lane, London, England, W5 1EZ
                 </span>
               </li>
               <li>
