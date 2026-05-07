@@ -146,7 +146,7 @@ export default function ContactPage() {
                 <div className="rounded-xl overflow-hidden shadow-premium h-[300px]">
                   <iframe
                     title="VUKA Travels Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.0!2d-0.1398!3d51.5107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d3e3e3e3e3%3A0x1234567890123456!2sRegent%20Street%2C%20London%20W1B%203HH%2C%20UK!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus"
+                    src="https://www.google.com/maps?q=K+T+Summit+House+100+Hanger+Lane+London+W5+1EZ&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
