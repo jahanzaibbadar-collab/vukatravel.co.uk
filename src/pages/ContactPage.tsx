@@ -24,8 +24,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["3rd Floor Suite 207", "Regent Street, London England", "W1B3HH"],
-    action: "https://maps.google.com/?q=Regent+Street+London+W1B3HH",
+    details: ["K T Summit House", "100 Hanger Lane", "London, England, W5 1EZ"],
+    action: "https://maps.google.com/?q=K+T+Summit+House+100+Hanger+Lane+London+W5+1EZ",
   },
   {
     icon: Clock,
