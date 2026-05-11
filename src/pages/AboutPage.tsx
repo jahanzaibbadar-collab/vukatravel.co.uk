@@ -54,7 +54,7 @@ export default function AboutPage() {
               Your Journey, Our Passion
             </h1>
             <p className="text-lg text-gold-light/90 leading-relaxed">
-              Founded with a vision to make travel accessible and memorable, VUKA Travels has been 
+              Founded with a vision to make travel accessible and memorable, Vuka Travels has been 
               connecting UK travellers with destinations across Africa and Asia for over 15 years.
             </p>
           </motion.div>
@@ -105,12 +105,12 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                   <p>
-                    VUKA Travels was established with a simple mission: to provide UK travellers with 
+                    Vuka Travels was established with a simple mission: to provide UK travellers with 
                     exceptional service and competitive prices for their journeys to East Africa, Asia, 
                     and beyond.
                   </p>
                   <p>
-                    "VUKA" means "wake up" or "arise" in Swahili, symbolizing our commitment to helping 
+                    "Vuka" means "wake up" or "arise" in Swahili, symbolizing our commitment to helping 
                     you rise above ordinary travel experiences and discover the extraordinary. Our roots 
                     in East African travel give us unique insights and connections that benefit our customers.
                   </p>
@@ -124,7 +124,7 @@ export default function AboutPage() {
                 <div className="relative">
                   <img
                     src={aboutTeam}
-                    alt="VUKA Travels Team"
+                    alt="Vuka Travels Team"
                     className="rounded-xl shadow-premium-lg"
                   />
                   <div className="absolute -bottom-6 -right-6 bg-gold rounded-lg p-6 shadow-gold hidden md:block">

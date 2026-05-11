@@ -57,9 +57,9 @@ export function Header() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <img src={logo} alt="VUKA Travels" className="h-14 w-14 object-contain rounded-full" />
+              <img src={logo} alt="Vuka Travels" className="h-14 w-14 object-contain rounded-full" />
               <div className="hidden sm:block">
-                <span className="text-xl font-display font-bold text-navy">VUKA</span>
+                <span className="text-xl font-display font-bold text-navy">Vuka</span>
                 <span className="text-xl font-display font-bold text-gold"> Travels</span>
               </div>
             </Link>

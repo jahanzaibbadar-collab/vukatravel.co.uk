@@ -238,7 +238,7 @@ export default function FlightsPage() {
             className="text-center mb-12"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-              Why Book Your Flights With VUKA Travels?
+              Why Book Your Flights With Vuka Travels?
             </h2>
           </motion.div>
 

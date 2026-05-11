@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const WHATSAPP_NUMBER = "442038768217";
 const PHONE_NUMBER = "+442038768217";
-const WHATSAPP_MESSAGE = "Hello VUKA Travels, I would like to inquire about flights.";
+const WHATSAPP_MESSAGE = "Hello Vuka Travels, I would like to inquire about flights.";
 
 export function FloatingContactButtons() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
