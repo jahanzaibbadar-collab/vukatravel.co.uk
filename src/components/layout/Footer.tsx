@@ -28,9 +28,9 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-3">
-              <img src={logo} alt="VUKA Travels" className="h-16 w-16 object-contain rounded-full bg-background/10 p-1" />
+              <img src={logo} alt="Vuka Travels" className="h-16 w-16 object-contain rounded-full bg-background/10 p-1" />
               <div>
-                <span className="text-xl font-display font-bold text-primary-foreground">VUKA</span>
+                <span className="text-xl font-display font-bold text-primary-foreground">Vuka</span>
                 <span className="text-xl font-display font-bold text-gold"> Travels</span>
               </div>
             </Link>
@@ -125,7 +125,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gold/20">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gold-light/60 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} VUKA Travels. All rights reserved. | ATOL Protected
+              © {new Date().getFullYear()} Vuka Travels. All rights reserved. | ATOL Protected
             </p>
             <div className="flex gap-6 text-sm">
               <Link to="/privacy" className="text-gold-light/60 hover:text-gold transition-colors">

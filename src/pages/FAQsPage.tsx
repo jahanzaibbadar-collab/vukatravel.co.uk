@@ -27,7 +27,7 @@ const faqCategories = [
       },
       {
         question: "Is my booking protected?",
-        answer: "Yes! As an ATOL protected travel agent, your money is protected if the travel company fails. This gives you peace of mind when booking flights and holidays through VUKA Travels.",
+        answer: "Yes! As an ATOL protected travel agent, your money is protected if the travel company fails. This gives you peace of mind when booking flights and holidays through Vuka Travels.",
       },
     ],
   },

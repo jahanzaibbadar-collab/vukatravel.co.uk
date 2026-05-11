@@ -55,7 +55,7 @@ const testimonials = [
   {
     name: "Sarah Thompson",
     location: "London",
-    text: "VUKA Travels made our family trip to Kenya absolutely seamless. Their attention to detail and competitive prices made all the difference!",
+    text: "Vuka Travels made our family trip to Kenya absolutely seamless. Their attention to detail and competitive prices made all the difference!",
     rating: 5,
   },
   {
@@ -95,7 +95,7 @@ export default function HomePage() {
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground mb-4 leading-tight">
               Discover the World with{" "}
-              <span className="text-gradient-gold">VUKA Travels</span>
+              <span className="text-gradient-gold">Vuka Travels</span>
             </h1>
             <p className="text-base md:text-lg text-gold-light/90 max-w-2xl mx-auto">
               Experience exceptional travel services with competitive prices on flights to 
@@ -224,7 +224,7 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-gold font-medium text-sm uppercase tracking-wider">Why VUKA Travels</span>
+            <span className="text-gold font-medium text-sm uppercase tracking-wider">Why Vuka Travels</span>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mt-3 mb-4">
               Your Trusted Travel Partner
             </h2>
