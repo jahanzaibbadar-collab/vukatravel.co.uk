@@ -61,7 +61,7 @@ const testimonials = [
   {
     name: "James Patel",
     location: "Birmingham",
-    text: "I've been booking my flights to India through VUKA for years. Their customer service is exceptional and prices are always the best.",
+    text: "I've been booking my flights to India through Vuka for years. Their customer service is exceptional and prices are always the best.",
     rating: 5,
   },
   {

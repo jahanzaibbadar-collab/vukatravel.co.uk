@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: ["info@vukatravels.co.uk", "bookings@vukatravels.co.uk"],
+    details: ["info@vukatravels.co.uk"],
     action: "mailto:info@vukatravels.co.uk",
   },
   {
@@ -30,7 +30,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Opening Hours",
-    details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM", "Sunday: Closed"],
+    details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 3:00 PM", "Sunday: Closed"],
     action: null,
   },
 ];

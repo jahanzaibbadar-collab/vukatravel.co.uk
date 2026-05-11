@@ -110,7 +110,7 @@ export default function HomeContactForm() {
                   </h4>
                   <p className="text-muted-foreground text-sm">
                     Mon - Fri: 9:00 AM - 6:00 PM<br />
-                    Sat: 10:00 AM - 4:00 PM
+                    Sat: 10:00 AM - 3:00 PM
                   </p>
                 </div>
               </div>
